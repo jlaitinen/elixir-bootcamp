@@ -3,6 +3,9 @@ defmodule Cards do
         Provides methods for creating and handling a deck
     """
 
+    @doc """
+        Returns a deck of cards
+    """
     def create_deck do
         values = ["Ace", "Two", "Three", "Four", "Five"]
         suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -12,6 +15,16 @@ defmodule Cards do
         end
     end
 
+    @doc """
+        Determines wheter a dec contains a given acard
+
+    ## Examples
+
+        iex> deck = Cards.create_deck
+        iex> Cards.contains?(deck, "Ace of Spades")
+        true
+
+    """
     def contains?(deck, card) do
         Enum.member?(deck, card)
     end
